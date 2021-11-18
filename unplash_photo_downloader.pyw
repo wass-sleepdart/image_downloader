@@ -3,7 +3,10 @@ import json
 import os
 import wget
 import time
-url='https://api.unsplash.com/photos/random/?client_id=QNFW-dI2vBRYt-7Ek5WcrWxNdabSiqWRJQ01Fn90WGc'
+#You need to get an api key for this to work 
+#you can get a free aoi key here:'https://unsplash.com/documentation'
+#once you get the api key put it after the client_id= in the url
+url='https://api.unsplash.com/photos/random/?client_id='
 
 def get_image(topic, count):
         wallpapers_folder=os.chdir('C:\Wallpapers')
@@ -20,15 +23,8 @@ def get_image(topic, count):
         image_url=json_to_dict[0]['urls']['raw']
         wget.download(image_url, topic+'.jpg')
 
-#get_image('desktop wallpapers',3)
+get_image('desktop wallpapers',3)
 
-def mymin(tocheck):
-    minval = None
-    for cur in tocheck:
-        if minval is None or cur < minval:
-            minval = cur
-    return minval
-print(mymin([1,-45,-54,-64,-456,3,4,55,667,58,23]))
 
   
 
